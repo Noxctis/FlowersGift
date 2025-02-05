@@ -1391,3 +1391,10 @@ body {
 .not-loaded * {
   animation-play-state: paused !important;
 }
+
+.no-animation *,
+.no-animation *::before,
+.no-animation *::after {
+  animation: none !important;
+  transition: none !important;
+}
