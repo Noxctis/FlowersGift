@@ -1,3 +1,4 @@
+/* Reset and global styles */
 *,
 *::after,
 *::before {
@@ -18,7 +19,13 @@
   width: 100%;
   height: 100%;
   filter: blur(0.1vmin);
-  background-image: radial-gradient(ellipse at top, transparent 0%, var(--dark-color)), radial-gradient(ellipse at bottom, var(--dark-color), rgba(145, 233, 255, 0.2)), repeating-linear-gradient(220deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), repeating-linear-gradient(189deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), repeating-linear-gradient(148deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), linear-gradient(90deg, rgb(255, 255, 250), rgb(240, 240, 240));
+  background-image: 
+    radial-gradient(ellipse at top, transparent 0%, var(--dark-color)),
+    radial-gradient(ellipse at bottom, var(--dark-color), rgba(145, 233, 255, 0.2)),
+    repeating-linear-gradient(220deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px),
+    repeating-linear-gradient(189deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px),
+    repeating-linear-gradient(148deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px),
+    linear-gradient(90deg, rgb(255, 255, 250), rgb(240, 240, 240));
 }
 
 .title {
@@ -27,13 +34,11 @@
   left: 0;
   color: white;
   font-family: 'Courier New', Courier, monospace;
-
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
   align-items: center;
-
   width: 100%;
   height: 100vh;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
@@ -50,13 +55,12 @@
   from {
     opacity: 0;
   }
-
   to {
     opacity: 1;
   }
 }
 
-/* Terapkan animasi dengan delay */
+/* Apply typing animation with delay */
 .title span {
   opacity: 0;
   animation: typing 1s ease forwards;
@@ -67,6 +71,7 @@ a {
   text-decoration: none;
 }
 
+/* Button styles */
 .btn {
   border: none;
   width: 15em;
@@ -110,26 +115,35 @@ a {
   transform: scale(2.1);
 }
 
-
-@keyframes bellshake {
-  0% { transform: rotate(0); }
-  15% { transform: rotate(5deg); }
-  30% { transform: rotate(-5deg); }
-  45% { transform: rotate(4deg); }
-  60% { transform: rotate(-4deg); }
-  75% { transform: rotate(2deg); }
-  85% { transform: rotate(-2deg); }
-  92% { transform: rotate(1deg); }
-  100% { transform: rotate(0); }
+/* Container for the buttons */
+.btn-container {
+  position: absolute;
+  top: 60vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
+/* Message styling */
+.message {
+  position: absolute;
+  top: 80vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: rgb(228, 221, 219);
+  font-size: 20px;
+}
+
+/* Hearts container styles */
 .hearts-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none; /* Prevent clicking */
+  pointer-events: none;
   overflow: hidden;
 }
 
