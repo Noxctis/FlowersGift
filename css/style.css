@@ -306,7 +306,7 @@ body {
 }
 
 .flower__light:nth-child(odd) {
-  background-color: #fff;
+  background-color: #ca17d0;
 }
 
 .flower__light--1 {
