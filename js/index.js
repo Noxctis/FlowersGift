@@ -13,6 +13,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Yes button click event: redirect without showing a URL on hover
+  const yesButton = document.querySelector('.yes-btn');
+  if (yesButton) {
+    yesButton.addEventListener('click', () => {
+      window.location.href = 'flower.html';
+    });
+  }
+
   // Original No button behavior:
   const originalNoButton = document.querySelector('.no-btn');
   if (originalNoButton) {
@@ -57,18 +65,19 @@ function createFloatingNoButton() {
   newNoButton.style.position = 'absolute';
   newNoButton.style.transition = 'all 0.3s ease-in-out';
 
-  // Place at a random location in the viewport (avoiding the very edges by using 90% range)
-  const randomLeft = Math.random() * 90;
-  const randomTop = Math.random() * 90;
+  // Place at a random location with a 10% margin from each edge
+  const margin = 10; // margin in viewport units
+  const randomLeft = margin + Math.random() * (100 - 2 * margin);
+  const randomTop = margin + Math.random() * (100 - 2 * margin);
   newNoButton.style.left = `${randomLeft}vw`;
   newNoButton.style.top = `${randomTop}vh`;
 
   document.body.appendChild(newNoButton);
 
-  // On hover, move to a new random location
+  // On hover, move to a new random location (with a 10% margin from edges)
   newNoButton.addEventListener('mouseenter', function () {
-    const newLeft = Math.random() * 90;
-    const newTop = Math.random() * 90;
+    const newLeft = margin + Math.random() * (100 - 2 * margin);
+    const newTop = margin + Math.random() * (100 - 2 * margin);
     newNoButton.style.left = `${newLeft}vw`;
     newNoButton.style.top = `${newTop}vh`;
   });

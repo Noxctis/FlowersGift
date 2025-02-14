@@ -11,6 +11,7 @@
   --dark-color: #000;
 }
 
+/* Updated Valentine’s-themed background with a purple tulip */
 .night {
   position: fixed;
   left: 50%;
@@ -72,7 +73,7 @@ a {
   text-decoration: none;
 }
 
-/* Button styles */
+/* Button styles (applicable to both a and button elements) */
 .btn {
   border: none;
   width: 15em;
@@ -82,11 +83,19 @@ a {
   justify-content: center;
   align-items: center;
   gap: 12px;
-  background: #1C1A1C;
+  background: linear-gradient(135deg, #ff77a9, #a953b6);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  /* Remove default button styling */
+  outline: none;
 }
 
+button {
+  background: none;
+  border: none;
+}
+
+/* SVG and text styles */
 .sparkle {
   fill: #AAAAAA;
   transition: all 800ms ease;
